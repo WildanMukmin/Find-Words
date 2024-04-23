@@ -33,7 +33,7 @@ string findWord(char** vec, int rows, int cols, string word){
     string reverseWord = word;
     reverse(reverseWord.begin(), reverseWord.end());
 
-    // diagonal kanan atas ke bawah
+    // diagonal kiri atas ke bawah
     for(int i = 0; i <= rows - lengthOfWord; i++){
         for(int j = 0; j <= cols - lengthOfWord; j++){
             string temp = "";
@@ -41,13 +41,12 @@ string findWord(char** vec, int rows, int cols, string word){
                 temp += tolower(vec[i + k][j + k]);
             }
             if(temp == word || temp == reverseWord){
-                cout << i + 1 << " " << j + 1 << endl;
                 return "Ada";
             }
         }
     }
 
-    // diagonal kiris atas ke bawah
+    // diagonal kanan atas ke bawah
     for(int i = 0; i <= rows - lengthOfWord; i++){
         for(int j = cols - 1; j >= (lengthOfWord - 1); j--){
             string temp = "";
@@ -55,7 +54,6 @@ string findWord(char** vec, int rows, int cols, string word){
                 temp += tolower(vec[i + k][j - k]);
             }
             if(temp == word || temp == reverseWord){
-                cout << i + 1 << " " << j + 1 << endl;
                 return "Ada";
             }
         }
@@ -69,7 +67,6 @@ string findWord(char** vec, int rows, int cols, string word){
                 temp += tolower(vec[i + k][j]);
             }
             if(temp == word || temp == reverseWord){
-                cout << i + 1 << " " << j + 1 << endl;
                 return "Ada";
             }
         }
@@ -83,7 +80,6 @@ string findWord(char** vec, int rows, int cols, string word){
                 temp += tolower(vec[i][j + k]);
             }
             if(temp == word || temp == reverseWord){
-                cout << i + 1 << " " << j + 1 << endl;
                 return "Ada";
             }
         }
