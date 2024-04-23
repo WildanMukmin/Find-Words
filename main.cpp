@@ -60,5 +60,19 @@ string findWord(char** vec, int rows, int cols, string word){
             }
         }
     }
+
+    // vertikal
+    for(int i = 0; i <= rows - lengthOfWord; i++){
+        for(int j = 0; j < cols; j++){
+            string temp = "";
+            for(int k = 0; k < lengthOfWord; k++){
+                temp += tolower(vec[i + k][j]);
+            }
+            if(temp == word || temp == reverseWord){
+                cout << i + 1 << " " << j + 1 << endl;
+                return "Ada";
+            }
+        }
+    }
     return "Tidak Ada";
 }
